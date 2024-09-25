@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -16,7 +16,8 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
+import SingUp from './pages/auth/singUp';
+import StackNavigation from './pages/auth/navigator/navigator';
 import {
   Colors,
   DebugInstructions,
@@ -29,11 +30,11 @@ type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
-function Section({children, title}: SectionProps): React.JSX.Element {
+function Section({ children, title }: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
-      <Text
+      {/* <Text
         style={[
           styles.sectionTitle,
           {
@@ -50,7 +51,7 @@ function Section({children, title}: SectionProps): React.JSX.Element {
           },
         ]}>
         {children}
-      </Text>
+      </Text> */}
     </View>
   );
 }
@@ -63,8 +64,12 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
+    <>
+      {/* // <SafeAreaView style={backgroundStyle}> */}
+      {/* <Text>WellCome Mohseen</Text>
+      <SingUp /> */}
+      <StackNavigation />
+      {/* <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
@@ -91,8 +96,9 @@ function App(): React.JSX.Element {
           </Section>
           <LearnMoreLinks />
         </View>
-      </ScrollView>
-    </SafeAreaView>
+      </ScrollView> */}
+      {/* // </SafeAreaView> */}
+    </>
   );
 }
 
